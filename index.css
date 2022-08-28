@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#welcome-heading{
+    margin-top: 20px;
+    margin-left: 700px;
+    font-size: 40px;
+    color: #0d66e7;
+}
+
+#select-dan{
+    margin-top: 30px;
+    margin-left: 830px;
+    width: 250px;
+    font-size: 28px;
+    text-align: center;
+}
