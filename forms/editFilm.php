@@ -12,6 +12,21 @@
 
 <body>
 
+    <?php
+    $hostname = "localhost";
+    $username = "root";
+    $password = "";
+    $db = "bioskop_php";
+
+    $connection = new mysqli($hostname, $username, $password, $db) or die("Connect failed: %s\n" . $connection->error);
+
+    $id_filma = $_GET['id_filma'];
+    $query = "SELECT * FROM raspored WHERE id=" . $id_filma;
+    $data = $connection->query($query);
+    $film = mysqli_fetch_array($data);
+    ?>
+
+
     <div class="div-form-wrap">
         <form method="post" id="form-add-film" class="text-center">
 
@@ -31,7 +46,7 @@
 
             <div class="form-group">
                 <label>Vreme</label>
-                <input type="text" class="form-control mb-2" name="vreme">
+                <input type="text" class="form-control mb-2" name="vreme" value="<?php echo $film['vreme'] ?>">
             </div>
 
             <div class="form-group">
@@ -39,12 +54,7 @@
                 <select class="form-select mb-2" name="film">
                     <?php
 
-                    $hostname = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $db = "bioskop_php";
 
-                    $connection = new mysqli($hostname, $username, $password, $db) or die("Connect failed: %s\n" . $connection->error);
 
                     $query = "SELECT id, naziv FROM film";
                     $data = $connection->query($query);
@@ -73,13 +83,28 @@
 
             <div class="form-group">
                 <label>Cena karte</label>
-                <input type="number" class="form-control mb-4" name="cena_karte">
+                <input type="number" class="form-control mb-4" name="cena_karte" value="<?php echo $film['cena_karte'] ?>">
             </div>
 
 
-            <button type="submit" class="btn btn-dark" name="dodaj_film_bn" id="btnd">Dodaj Film</button>
+            <button type="submit" class="btn btn-dark" name="dodaj_film_bn" id="btnd">Ažuriraj Film</button>
 
         </form>
+
+        <?php
+        include '../raspored.php';
+
+        if (isset($_POST['dodaj_film_bn'])) {
+
+            $filmRaspored = new Raspored();
+
+            if ($filmRaspored->update($_POST['dan'], $_POST['vreme'], $_POST['film'], $_POST['sala'], $_POST['cena_karte'], $id_filma)) {
+                echo "<script type='text/javascript'>alert('Film je ažuriran!'); location='../index.php'</script>";
+            } else {
+                echo "<script type='text/javascript'>alert('Film nije ažuriran!');";
+            }
+        }
+        ?>
 
     </div>
 </body>
