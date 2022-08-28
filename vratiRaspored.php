@@ -1,5 +1,6 @@
 <?php
 
+
 $hostname = "localhost";
 $username = "root";
 $password = "";
@@ -28,6 +29,7 @@ $data = $connection->query($query);
             <th>Godina</th>
             <th>Cena karte - RSD</th>
             <th>Sala</th>
+            <th>Akcije</th>
         </tr>
     </thead>
 
@@ -44,6 +46,7 @@ $data = $connection->query($query);
             <td><?php echo $red['godina'] ?></td>
             <td><?php echo $red['cena_karte'] ?></td>
             <td><?php echo $red['snaziv'] ?></td>
+            <td><a href="forms/editFilm.php?id_filma=<?php echo $red['id']; ?>"><button class="btn btn-dark">Izmena</button></a></td>
         </tr>
 
     <?php
