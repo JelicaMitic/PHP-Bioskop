@@ -11,7 +11,8 @@ $dan = $_POST['dan'];
 $query = "SELECT raspored.id, raspored.dan, raspored.vreme, raspored.cena_karte, film.naziv as fnaziv, film.godina, film.jezik, film.zanr, sala.naziv as snaziv 
         FROM raspored JOIN film ON raspored.film_id = film.id
                       JOIN sala ON raspored.sala_id = sala.id
-                      WHERE raspored.dan='" . $dan . "'";
+                      WHERE raspored.dan='" . $dan . "' 
+                      ORDER BY raspored.vreme ASC";
 
 $data = $connection->query($query);
 ?>

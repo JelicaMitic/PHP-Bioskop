@@ -19,6 +19,6 @@ class Raspored
         $connection = new mysqli($hostname, $username, $password, $db) or die("Connection failed: %s\n" . $connection->error);
 
         $query = "INSERT INTO raspored VALUES (null, '$dan', '$vreme', '$film_id', '$sala_id', '$cena_karte')";
-        $connection->query($query);
+        return $connection->query($query);
     }
 }

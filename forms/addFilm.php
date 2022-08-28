@@ -79,8 +79,24 @@
 
             <button type="submit" class="btn btn-dark" name="dodaj_film_bn" id="btnd">Dodaj Film</button>
 
-        </form>
 
+
+
+        </form>
+        <?php
+        include '../raspored.php';
+
+        if (isset($_POST['dodaj_film_bn'])) {
+
+            $filmRaspored = new Raspored();
+
+            if ($filmRaspored->insert($_POST['dan'], $_POST['vreme'], $_POST['film'], $_POST['sala'], $_POST['cena_karte'])) {
+                echo "<script type='text/javascript'>alert('Film je unet u raspored!'); location='../index.php'</script>";
+            } else {
+                echo "<script type='text/javascript'>alert('Film nije unet u raspored!');";
+            }
+        }
+        ?>
     </div>
 </body>
 
