@@ -21,6 +21,8 @@
         include 'meni.html';
         ?>
 
+        <input type="text" class="form-control text-center" id="s-in" placeholder="Unesite naziv/jezik/zanr filma...">
+
         <div class="div-list-index">
 
         </div>
