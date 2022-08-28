@@ -2,6 +2,7 @@ $(function () {
     izaberiDan();
     $("#s-in").hide();
     traziFilm();
+    sortirajFilmove();
 });
 
 function izaberiDan() {
@@ -45,5 +46,24 @@ function traziFilm() {
             }
         })
 
+    })
+}
+
+function sortirajFilmove() {
+
+    $(document).on('click', '#kolona-vreme', function () {
+
+        var sortPoredak = $(this).attr('poredak');
+        var dan = $('#select-dan').val();
+
+        $.ajax({
+            url: 'vratiSortiraneFilmove.php',
+            method: 'post',
+            data: { sortPoredak: sortPoredak, dan: dan },
+
+            success: function (data) {
+                $('.div-list-index').html(data);
+            }
+        })
     })
 }
