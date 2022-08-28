@@ -22,7 +22,7 @@ $data = $connection->query($query);
     <thead>
         <tr class="table-dark">
             <th>Dan</th>
-            <th id="kolona-vreme" poredak="ascending">Vreme</th>
+            <th id="kolona-vreme" poredak="descending">Vreme</th>
             <th>Film</th>
             <th>Jezik</th>
             <th>Žanr</th>

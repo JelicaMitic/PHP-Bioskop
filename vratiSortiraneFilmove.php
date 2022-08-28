@@ -69,7 +69,9 @@ if ($poredak == 'ascending') {
             <td><?php echo $red['godina'] ?></td>
             <td><?php echo $red['cena_karte'] ?></td>
             <td><?php echo $red['snaziv'] ?></td>
-            <td><a href="forms/editFilm.php?id_filma=<?php echo $red['id']; ?>"><button class="btn btn-dark">Izmena</button></a></td>
+            <td><a href="forms/editFilm.php?id_filma=<?php echo $red['id']; ?>"><button class="btn btn-dark">Izmena</button></a>
+                <a href="obrisiFilm.php?id_filma=<?php echo $red['id']; ?>"><button class="btn btn-dark">Brisanje</button></a>
+            </td>
         </tr>
 
     <?php
