@@ -17,3 +17,9 @@
     font-size: 28px;
     text-align: center;
 }
+
+.table { 
+    margin-top: 50px;
+    margin-left: 250px;
+    width: 1500px;
+}
