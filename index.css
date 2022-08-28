@@ -23,3 +23,24 @@
     margin-left: 250px;
     width: 1500px;
 }
+
+#dodaj_film {
+    margin-top: 10px;
+    margin-left: 715px;
+    margin-bottom: -5px;
+    width: 480px;
+    font-size: 20px;
+}
+
+#form-add-film {
+    width: 800px;
+    margin-top: 40px;
+    margin-left: 530px;
+    font-size: 20px;
+}
+
+#btnd{
+    width: 500px;
+    font-size: 20px;;
+}
+

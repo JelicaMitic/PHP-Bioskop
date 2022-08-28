@@ -15,6 +15,7 @@
     <div class="div-wrap">
 
         <h3 id="welcome-heading">Dobro došli u ITECH bioskop</h3>
+        <a href="forms/addFilm.php"><button type="button" class="btn btn-dark" id="dodaj_film">Novi Film</button></a>
 
         <?php
         include 'meni.html';
