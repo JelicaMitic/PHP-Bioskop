@@ -5,7 +5,7 @@ $username = "root";
 $password = "";
 $db = "bioskop_php";
 
-$connection = new mysqli($hostname, $username, $password, $db);
+$connection = new mysqli($hostname, $username, $password, $db) or die("Connect failed: %s\n" . $connection->error);
 
 $dan = $_POST['dan'];
 $query = "SELECT raspored.id, raspored.dan, raspored.vreme, raspored.cena_karte, film.naziv as fnaziv, film.godina, film.jezik, film.zanr, sala.naziv as snaziv 
